@@ -3,33 +3,41 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/countersHome"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/normalCounter"
+            android:icon="@drawable/ic_normal_counter"
+            android:title="Normal counter" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/timeCounter"
+            android:icon="@drawable/ic_time_counter"
+            android:title="Time counter" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/customCounter"
+            android:icon="@drawable/ic_custom_counter"
+            android:title="Custom counter" />
+        <item
+            android:id="@+id/workoutCounter"
+            android:icon="@drawable/ic_workout_counter"
+            android:title="Workout counter" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Options">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_settings"
                 android:title="Share" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/proVersion"
+                android:icon="@drawable/ic_pro"
+                android:title="Pro version" />
+            <item
+                android:id="@+id/rateUs"
+                android:icon="@drawable/ic_rate_us"
+                android:title="Rate us" />
         </menu>
     </item>
 

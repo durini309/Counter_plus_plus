@@ -12,9 +12,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private ListView listView;
+    private String names[] = {
+            "Pushups",
+            "Red cars",
+            "Birds",
+            "Birthday presents"
+    };
+    private String desc[] = {
+            "Lets do some pushups!",
+            "Counting red cards today",
+            "Birds poop in my car",
+            "Today is my birthday!"
+    };
+
+    private Integer imageId[] = {
+            R.drawable.ic_workout_counter_white,
+            R.drawable.ic_custom_counter_white,
+            R.drawable.ic_time_counter_white,
+            R.drawable.ic_normal_counter_white
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +48,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +57,35 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Filling list
+        CustomListAdapter customList = new CustomListAdapter(this, names, desc, imageId);
+        listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(customList);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
+                //Intent intent = new Intent(MainActivity.this, seedInfo.class);
+                //intent.putExtra("itemName", names[i]);
+                //startActivity(intent);
+            }
+        });
+
+        final RelativeLayout listParent = (RelativeLayout) findViewById(R.id.listParent);
+        final FloatingActionsMenu newCounterFAB = (FloatingActionsMenu) findViewById(R.id.btnNewCounter);
+
+        newCounterFAB.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
+            @Override
+            public void onMenuExpanded() {
+                listParent.setAlpha((float)0.2);
+            }
+
+            @Override
+            public void onMenuCollapsed() {
+                listParent.setAlpha(1);
+            }
+        });
     }
 
     @Override
@@ -80,19 +126,22 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        if (id == R.id.countersHome){
 
         }
+//        if (id == R.id.nav_camera) {
+//            // Handle the camera action
+//        } else if (id == R.id.nav_gallery) {
+//
+//        } else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_rowSpan="2"
+        android:background="@drawable/icons_circled_background"
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/imageView"
+            android:tint="@color/colorWhite"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:layout_columnWeight="1"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:id="@+id/textViewName"
+        android:layout_row="0"
+        android:textSize="16sp"
+        android:textColor="@color/primaryText"
+        android:layout_column="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:layout_columnWeight="1"
+        android:paddingLeft="16dp"
+        android:paddingBottom="16dp"
+        android:textSize="14sp"
+        android:textColor="@color/secondaryText"
+        android:id="@+id/textViewDesc"
+        android:layout_row="1"
+        android:layout_column="1" />
+
+</GridLayout>

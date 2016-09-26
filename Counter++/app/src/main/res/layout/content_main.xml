@@ -2,18 +2,84 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.duncinos.counter.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/listParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.duncinos.counter.MainActivity">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/btnNewCounter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        fab:fab_addButtonColorNormal="@color/colorAccent"
+        fab:fab_addButtonColorPressed="@color/colorAccentDark"
+        fab:fab_addButtonPlusIconColor="@color/colorWhite"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/darkIcon"
+            fab:fab_icon="@drawable/ic_normal_counter"
+            fab:fab_colorNormal="@color/colorWhite"
+            fab:fab_title="Normal counter"
+            fab:fab_size="mini"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@drawable/ic_custom_counter"
+            fab:fab_colorNormal="@color/colorWhite"
+            fab:fab_title="Custom counter"
+            fab:fab_size="mini"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@drawable/ic_time_counter"
+            fab:fab_colorNormal="@color/colorWhite"
+            fab:fab_title="Time counter"
+            fab:fab_size="mini"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnWorkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@drawable/ic_workout_counter"
+            fab:fab_colorNormal="@color/colorWhite"
+            fab:fab_title="Workout counter"
+            fab:fab_size="mini"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>
